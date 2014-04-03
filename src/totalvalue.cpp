@@ -19,8 +19,25 @@ int total_value()
                   << "a client request to buy or sell some shares. Example:                 \n\n"
                   << "    XYZ BBO: 12.01 - 12.02 | Client Request: Buy 1000 XYZ @ Market    \n\n"
                   << "Your job is to calculate the total value of the trade. The game ends  \n"
-                  << "when you get a question wrong.                                        \n\n"
-                  << "                        Press ENTER to start.";
+                  << "when you get a question wrong.                                        \n";
+
+        divider();
+
+        int problem_count;
+
+        while (1) {
+                std::cout << "Please enter the number of problems you want to solve: ";
+
+                std::cin >> problem_count;
+                std::cin.ignore();
+
+                if (problem_count > 0)
+                        break;
+
+                std::cout << "That's not a valid choice.\n\n";
+        }
+
+        std::cout << "\n                        Press ENTER to start.";
 
 	std::cin.ignore();
 
@@ -41,7 +58,7 @@ int total_value()
 	std::uniform_real_distribution<double> price_dist(0.0, 99.99);
 	std::default_random_engine price_gen(time(NULL));
 
-	while (1) {
+        for (int i = 1; i <= problem_count; i++) {
 		int size_idx, size;
 
 		size_idx = size_dist(size_gen);
@@ -85,16 +102,17 @@ int total_value()
 
                 tracker.update(solve_time, ans == real_ans);
 
-		if (ans != real_ans) {
-                        divider();
-			std::cout << "                           == Game Over! ==\n\n";
-                        tracker.print();
-                        divider();
-			break;
-		}
+                if (ans != real_ans)
+                        std::cout << "Wrong!\n";
 
                 std::cout << "\n";
 	}
+
+        std::cout << "                           == Game Over! ==\n\n";
+
+        tracker.print();
+
+        divider();
 
 	return 0;
 }
