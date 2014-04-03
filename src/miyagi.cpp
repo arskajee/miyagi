@@ -1,12 +1,15 @@
 #include <iostream>
 
+#include "divider.hpp"
 #include "totalvalue.hpp"
 
 int main()
 {
-	std::cout << "\n == Welcome to Miyagi! ==\n\n"
-                  << "The following problem types are available:\n\n"
-                  << " * 1 - Trade Value Calculation\n\n"
+        divider();
+
+	std::cout << "                       == Welcome to Miyagi! ==                       \n\n"
+                  << "The following problem types are available:                            \n\n"
+                  << " * 1 - Trade Value Calculation                                        \n\n"
                   << "Please enter the number corresponding to your choice: ";
 
 	int choice;
@@ -20,8 +23,9 @@ int main()
 			break;
 		default:
 			std::cerr << "\nThat's not a valid choice. "
-                                  << "Please try again once you have learned how "
+                                  << "Please try again once you have learned how\n"
                                   << "to follow simple instructions.\n";
+                        divider();
 			return 1;
 	}
 
