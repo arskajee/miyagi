@@ -9,7 +9,7 @@ int main()
 
 	std::cout << "                       == Welcome to Miyagi! ==                       \n\n"
                   << "The following problem types are available:                            \n\n"
-                  << " * 1 - Trade Value Calculation                                        \n\n"
+                  << " * 1 - Total Trade Value                                              \n\n"
                   << "Please enter the number corresponding to your choice: ";
 
 	int choice;

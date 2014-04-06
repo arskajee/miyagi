@@ -12,21 +12,10 @@
 
 int total_value()
 {
-        divider();
-
-	std::cout << "              == Trade Value Calculation Instructions ==              \n\n"
-                  << "The best bid and offer of a stock will be displayed on the screen with\n"
-                  << "a client request to buy or sell some shares. Example:                 \n\n"
-                  << "    XYZ BBO: 12.01 - 12.02 | Client Request: Buy 1000 XYZ @ Market    \n\n"
-                  << "Your job is to calculate the total value of the trade. The game ends  \n"
-                  << "when you get a question wrong.                                        \n";
-
-        divider();
-
         int problem_count;
 
         while (1) {
-                std::cout << "Please enter the number of problems you want to solve: ";
+                std::cout << "\nPlease enter the number of problems you want to solve: ";
 
                 std::cin >> problem_count;
                 std::cin.ignore();
@@ -34,12 +23,8 @@ int total_value()
                 if (problem_count > 0)
                         break;
 
-                std::cout << "That's not a valid choice.\n\n";
+                std::cout << "That's not a valid choice.\n";
         }
-
-        std::cout << "\n                        Press ENTER to start.";
-
-	std::cin.ignore();
 
         divider();
 
