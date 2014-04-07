@@ -10,38 +10,22 @@
 #include "divider.hpp"
 #include "tracker.hpp"
 
-int total_value()
+int total_value(int problem_count)
 {
-        int problem_count;
-
-        while (1) {
-                std::cout << "\nPlease enter the number of problems you want to solve: ";
-
-                std::cin >> problem_count;
-                std::cin.ignore();
-
-                if (problem_count > 0)
-                        break;
-
-                std::cout << "That's not a valid choice.\n";
-        }
-
-        divider();
-
         Tracker tracker;
 
 	std::vector<int> sizes = {1000, 5000, 10000, 25000, 50000, 75000, 100000, 1000000};
 
 	std::uniform_int_distribution<int> size_dist(0, sizes.size() - 1);
-	std::default_random_engine size_gen(time(NULL));
+	std::default_random_engine size_gen(time(nullptr));
 
 	std::vector<std::string> sides = {"Buy", "Sell"};
 
 	std::uniform_int_distribution<int> side_dist(0, 1);
-	std::default_random_engine side_gen(time(NULL));
+	std::default_random_engine side_gen(time(nullptr));
 
 	std::uniform_real_distribution<double> price_dist(0.0, 99.99);
-	std::default_random_engine price_gen(time(NULL));
+	std::default_random_engine price_gen(time(nullptr));
 
         for (int i = 1; i <= problem_count; i++) {
 		int size_idx, size;
@@ -93,11 +77,7 @@ int total_value()
                 std::cout << "\n";
 	}
 
-        std::cout << "                           == Game Over! ==\n\n";
-
         tracker.print();
-
-        divider();
 
 	return 0;
 }

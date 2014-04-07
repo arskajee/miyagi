@@ -13,4 +13,4 @@ This creates an executable `miyagi` to `bin/`.
 
 ## Last Updated
 
-2014-04-06
+2014-04-07

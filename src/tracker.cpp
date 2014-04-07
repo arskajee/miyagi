@@ -1,5 +1,7 @@
+#include <iomanip>
 #include <iostream>
 
+#include "divider.hpp"
 #include "tracker.hpp"
 
 Tracker::Tracker()
@@ -21,7 +23,11 @@ void Tracker::update(double time, bool answer_correct)
 
 void Tracker::print()
 {
-        std::cout << " * Correct Answers:  " << correct << " / " << attempted << " ("
+        std::cout << "                           == Game Over! ==\n\n"
+                  << std::fixed << std::setprecision(2)
+                  << " * Correct Answers:  " << correct << " / " << attempted << " ("
                   << (double) correct / attempted * 100 << "%)\n"
                   << " * Time per Problem: " << elapsed_time / attempted << " seconds\n";
+
+        divider();
 }
