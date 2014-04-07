@@ -5,9 +5,8 @@
 #include <iostream>
 #include <random>
 
-#include "divider.hpp"
-#include "double_equals.hpp"
 #include "tracker.hpp"
+#include "utils.hpp"
 
 int stir_quote(int problem_count)
 {

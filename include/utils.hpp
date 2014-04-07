@@ -1,6 +1,7 @@
-#ifndef DOUBLE_EQUALS_H
-#define DOUBLE_EQUALS_H
+#ifndef UTILS_H
+#define UTILS_H
 
+void divider();
 bool double_equals(double value, double target);
 
 #endif

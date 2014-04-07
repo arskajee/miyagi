@@ -7,8 +7,8 @@
 #include <random>
 #include <vector>
 
-#include "divider.hpp"
 #include "tracker.hpp"
+#include "utils.hpp"
 
 int total_value(int problem_count)
 {
